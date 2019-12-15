@@ -13,6 +13,12 @@
                         <span class="invalid-feedback"> <?php echo $data['name_err']; ?></span>
                     </div>
                     <div class="form-group">
+                        <label for="lastname"> Priimek: <sup>*</sup></label>
+                        <!-- preverimo, če ni prazen input in ima ustrezni zapis, če nima izpišemo err message, sicer okej -->
+                        <input type="text" name="lastname" class="form-control form-control-lg <?php echo (!empty($data['lastname_err'])) ?  'is-invalid' : '';?>" value="<?php echo $data['lastname'] ;?>">
+                        <span class="invalid-feedback"> <?php echo $data['lastname_err']; ?></span>
+                    </div>
+                    <div class="form-group">
                         <label for="email"> Email: <sup>*</sup></label>
                         <!-- preverimo, če ni prazen input in ima ustrezni zapis, če nima izpišemo err message, sicer okej -->
                         <input type="email" name="email" class="form-control form-control-lg <?php echo (!empty($data['email_err'])) ?  'is-invalid' : '';?>" value="<?php echo $data['email'] ;?>">
