@@ -36,18 +36,16 @@ class Core{
         //preverimo, če metoda obstaja v controlleru
         if(method_exists($this->currentController, $url[1])){
             $this->currentMethod = $url[1];
-            
+
             //unsetamo index
             unset($url[1]);
         }
       }
       
       // GET Parametre, če so paramatri jih dodamo v array, drugače ostane prazen
-
       $this->param = $url ? array_values($url) : [];
       
       //Call Back funkcija parametrov
-
       call_user_func_array([$this->currentController,$this->currentMethod], $this->param);
 
     }
