@@ -29,4 +29,15 @@
            }
        }
    }
+
+    //za preverjamje, če je uporabnik prijavljen
+     function isLoggedIn(){
+        if(isset($_SESSION['user_id'])){
+            return true;
+        }
+        else {
+            return false;
+        }
+}
+
    

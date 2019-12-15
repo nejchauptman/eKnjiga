@@ -173,7 +173,7 @@
             $_SESSION['user_id']= $user->id;
             $_SESSION['user_email']= $user->email;
             $_SESSION['user_name']= $user->name;
-            header('Location:'.URLROOT. '/pages/index');
+            header('Location:'.URLROOT. '/posts');
         }
 
         //odjavimo se
@@ -183,15 +183,5 @@
             unset($_SESSION['user_name']);
             session_destroy();
             header('Location:'.URLROOT. '/users/login');
-        }
-
-        //za preverjamje, če je uporabnik prijavljen
-        public function isLoggedIn(){
-            if(isset($_SESSION['user_id'])){
-                return true;
-            }
-            else {
-                return false;
-            }
         }
     }
