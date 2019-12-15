@@ -13,6 +13,9 @@
     <?php foreach($data['posts'] as $post) : ?>
         <div class="card card-body mb-3">
         <h4 class="card-title"><?php echo $post->title; ?></h4>
+        <div class="bg-secondary text-white p-2 mb-3">
+            Avtor:  <?php echo $post->name; ?> DNE: <?php echo $post->postCreated; ?>
+        </div>
         <a href="<?php echo URLROOT; ?>/posts/show/<?php echo $post->postId; ?>" class="btn btn-dark"> Več </a>
         </div>
     <?php endforeach; ?>

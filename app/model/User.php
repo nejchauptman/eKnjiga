@@ -55,7 +55,7 @@
 
             $row=$this->db->single();
             $hashedPassword = $row->password;
-            
+
             //če se passworda ujemata, vrnemo row iz db
             if(password_verify($password, $hashedPassword)){
                 return $row;
@@ -63,5 +63,15 @@
             else{
                 return false;
             }
+        }
+
+    
+        public function getUserById($id){
+
+            $this->db->query("SELECT * FROM users WHERE id =:id");
+            $this->db->bind(':id', $id);
+            
+            $row = $this->db->single();
+            return $row;
         }
     }
