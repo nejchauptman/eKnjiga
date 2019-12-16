@@ -9,4 +9,4 @@ Web book store written in PHP
 5. Go to your browser in type http://localhost/phpmyadmin/
 6. Insert database from project
 7. Check .htaccess files in project
-8. Change names inside of .htaccess file if is necessary
+8. Change names inside of .htaccess file if necessary
