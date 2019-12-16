@@ -4,4 +4,3 @@
     //inicializiramo Core Library
     $init = new Core;
 ?>
-mali sded

@@ -1,23 +1,35 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
-
-<?php flash('blog_message');?>
-    <div class="row mb-2">
+    <?php flash('blog_message');?>
+    <div class="row mt-2 mb-3">
         <div class="col-md-6">
             <h1>Objave</h1>
         </div>
         <div class="col-md-6">
-            <a href="<?php echo URLROOT;?>/posts/add" class="btn btn-primary pull-right">
+            <a href="<?php echo URLROOT;?>/posts/add" class="btn btn-primary pull-right m-2">
             <i class="fa fa-pencil"></i> Dodaj objavo</a>
         </div>
     </div>
+<div class="container ">
+    <div class="row ml-3">
     <?php foreach($data['posts'] as $post) : ?>
-        <div class="card card-body mb-3">
-        <h4 class="card-title"><?php echo $post->title; ?></h4>
-        <div class="bg-secondary text-white p-2 mb-3">
-            Avtor:  <?php echo $post->name; ?> DNE: <?php echo $post->postCreated; ?>
+      <div class="card mb-4 ml-3">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h2 class="card-title"><?php echo $post->title; ?></h2>
+                    <p class="card-text"> Avtor:  <?php echo $post->name; ?> </p>
+                    <p class="card-text"> DNE: <?php echo $post->postCreated; ?> </p>
+                    <a href="<?php echo URLROOT; ?>/posts/show/<?php echo $post->postId; ?>" class="btn btn-primary"> Več </a>
+                </div>
+            </div>
         </div>
-        <a href="<?php echo URLROOT; ?>/posts/show/<?php echo $post->postId; ?>" class="btn btn-dark"> Več </a>
+        <div class="card-footer text-muted">
+        <p class="card-text"> Avtor:  <?php echo $post->name; ?> DNE: <?php echo $post->postCreated; ?> </p>
         </div>
-    <?php endforeach; ?>
+     </div>
+  <?php endforeach; ?>
+  </div>
 
+
+     
 <?php require APPROOT . '/views/inc/footer.php'; ?>
