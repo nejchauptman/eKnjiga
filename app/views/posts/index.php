@@ -2,7 +2,7 @@
     <?php flash('blog_message');?>
     <div class="row mt-2 mb-3">
         <div class="col-md-6">
-            <h1>Objave</h1>
+            <h1>Blog vsebine</h1>
         </div>
         <div class="col-md-6">
             <a href="<?php echo URLROOT;?>/posts/add" class="btn btn-primary pull-right m-2">

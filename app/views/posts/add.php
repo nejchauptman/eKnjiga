@@ -2,7 +2,7 @@
  <?php require APPROOT . '/views/inc/header.php'; ?>
 
      <div class="card card-body bg-light mt-5">
-        <h5 class="text-center"> Dodaj blog</h5>
+        <h5 class="text-center" style="font-size: 30px; "> Dodaj blog</h5>
         <form action="<?php echo URLROOT; ?>/posts/add" method="POST">
             <div class="form-group">
                 <label for="title"> Naslov: <sup>*</sup></label>
