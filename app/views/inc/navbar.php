@@ -12,7 +12,7 @@
         <a class="nav-link" href="<?php echo URLROOT;?>/pages/products">Shop</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo URLROOT;?>/posts/shop">Blog</a>
+        <a class="nav-link" href="<?php echo URLROOT;?>/posts/blog">Blog</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
