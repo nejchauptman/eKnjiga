@@ -4,10 +4,20 @@
         <div class="col-md-6">
             <h1>Blog vsebine</h1>
         </div>
-        <div class="col-md-6">
-            <a href="<?php echo URLROOT;?>/posts/add" class="btn btn-primary pull-right m-2">
-            <i class="fa fa-pencil"></i> Dodaj objavo</a>
-        </div>
+        <?php if( $_SESSION['user_id']==5) : ?>
+            <div class="col-md-2">
+                <a href="<?php echo URLROOT;?>/posts/add" class="btn btn-primary pull-right m-2">
+                <i class="fa fa-pencil"></i> Dodaj objavo</a>
+            </div>
+            <div class="col-md-2">
+                <a href="<?php echo URLROOT;?>/posts/addProduct" class="btn btn-primary pull-right m-2">
+                <i class="fa fa-pencil"></i> Dodaj izdelek</a>
+            </div>
+            <div class="col-md-2">
+                <a href="<?php echo URLROOT;?>/posts/allProducts" class="btn btn-primary pull-right m-2">
+                <i class="fa fa-pencil"></i> Vsi produkti</a>
+            </div>
+        <?php endif;?>
     </div>
 <div class="container ">
     <div class="row ml-3">

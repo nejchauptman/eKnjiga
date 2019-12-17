@@ -38,6 +38,15 @@
         else {
             return false;
         }
-}
+    }
+    
+    function isAdmin(){
+        if(isset($_SESSION['user_id'])==5){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
    

@@ -9,7 +9,7 @@
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URLROOT;?>">Domov</a>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo URLROOT;?>/pages/products">Shop</a>
+        <a class="nav-link" href="<?php echo URLROOT;?>/pages/shop">Shop</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URLROOT;?>/posts/blog">Blog</a>

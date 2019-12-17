@@ -2,7 +2,9 @@
 
     class Pages extends Controller{
         public function __construct(){
-           
+            $this->postModel=$this->model('Post');
+            $this->userModel=$this->model('User');
+            $this->productModel=$this->model('Product');
         }
 
         //ker je index kot default potrebujemo to!
@@ -19,13 +21,17 @@
             $this->view('pages/index', $data);
         }
 
-        public function products(){
-            $data=['title' =>'SHOP',
+        public function shop(){
+        //dobimo posts iz našega Post modela
+        $products = $this->productModel->getProducts();
+
+            $data=['title' =>'  Trgovina',
             "description" => "Domača prodaja knjig",
+            'products' => $products
             
         ];
             
-            $this->view('pages/products', $data);
+            $this->view('pages/shop', $data);
         }
         public function blog(){
             

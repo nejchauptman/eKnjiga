@@ -11,8 +11,9 @@
 
             $this->postModel=$this->model('Post');
             $this->userModel=$this->model('User');
+            $this->productModel=$this->model('Product');
 
-        }
+          }
 
         public function index(){
             //dobimo posts iz našega Post modela
@@ -167,4 +168,68 @@
             }
         }
 
+        // del za PRODUKTE -- SHOP
+
+        public function addProduct(){
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+             
+                //sanitize-amo post array
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                $data =[
+                    'title' => trim($_POST['title']),
+                    'body' => trim($_POST['body']),
+                    'price' => trim($_POST['price']),
+                    'user_id' => $_SESSION['user_id'],
+                    'title_err' => '',
+                    'body_err' => '',
+                    'user_err' => '',
+                    'price_err' => ''
+                ];
+
+                //validiramo naslov
+                if(empty($data['title'])){
+                    $data['title_err'] = 'Vnesite naslov';
+                }
+
+                 //validiramo telo vsebine
+                 if(empty($data['body'])){
+                    $data['body_err'] = 'Vnesite vsebino';
+                }
+
+                //preverimo da ni errorjev in dodamo
+                if(empty($data['title_err']) && empty($data['body_err'])){
+                    //če fieldi niso prazni oz ni errorjev
+                    if($this->productModel->addProduct($data)){
+                        flash('product_message', 'dodan izdelek');
+                        header('Location:'.URLROOT. '/pages/shop');
+
+                    }
+                    else{
+                        die("ne dela :(");
+                    }
+                }
+                else{
+                    //naložimo view z errorji
+                    $this->view('posts/addProduct', $data);
+                }
+            }
+            else{
+                $data =[
+                    'title' => '',
+                    'body' => ''
+                ];
+                $this->view('posts/addProduct', $data);
+            }
+        }
+
+        public function allProducts(){
+            //dobimo posts iz našega Post modela
+            $products = $this->productModel->getProducts();
+
+            $data =[
+                'products' => $products
+            ];
+            $this->view('posts/allProducts', $data);
+        }
+      
     }
