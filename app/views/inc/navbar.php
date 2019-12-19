@@ -21,6 +21,9 @@
             <a class="nav-link" href="">Dobrodošel  <?php echo $_SESSION['user_name']; ?></a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="<?php echo URLROOT;?>/pages/cart"> <i class="fa fa-shopping-cart"></i> </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT;?>/users/logout">Odjava</a>
         </li>
         <?php elseif(isset($_SESSION['user_id']) && ($_SESSION['user_id']==5)) : ?>

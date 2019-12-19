@@ -171,8 +171,9 @@
         // del za PRODUKTE -- SHOP
 
         public function addProduct(){
-            if($_SERVER['REQUEST_METHOD'] == 'POST'){
-             
+
+            if(isset($_POST['submit'])){
+                $target = "./images/".basename($_FILES['postimage']['name']);
 
                 //sanitize-amo post array
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -180,14 +181,15 @@
                     'title' => trim($_POST['title']),
                     'body' => trim($_POST['body']),
                     'price' => trim($_POST['price']),
-                    //'image' => $_FILES(['image']['name']),
+                    'post_image' => $_FILES['postimage']['name'],
                     'user_id' => $_SESSION['user_id'],
                     'title_err' => '',
                     'body_err' => '',
                     'user_err' => '',
-                    'price_err' => '',
-                    'image_err' => ''
+                    'price_err' => ''
                 ];
+
+                
 
                 //validiramo naslov
                 if(empty($data['title'])){
@@ -202,10 +204,10 @@
                 //preverimo da ni errorjev in dodamo
                 if(empty($data['title_err']) && empty($data['body_err'])){
                     //če fieldi niso prazni oz ni errorjev
+                    move_uploaded_file($_FILES['postimage']['tmp_name'], $target);
                     if($this->productModel->addProduct($data)){
                         flash('product_message', 'dodan izdelek');
                         header('Location:'.URLROOT. '/pages/shop');
-
                     }
                     else{
                         die("ne dela :(");

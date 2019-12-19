@@ -3,7 +3,7 @@
 
 <div class="card card-body bg-light mt-5">
    <h5 class="text-center" style="font-size: 30px; "> Dodaj izdelek</h5>
-   <form action="<?php echo URLROOT; ?>/posts/addProduct" method="POST">
+   <form action="<?php echo URLROOT; ?>/posts/addProduct" method="POST" enctype="multipart/form-data">
        <div class="form-group">
            <label for="title"> Naslov: <sup>*</sup></label>
                <!-- preverimo, če ni prazen input in ima ustrezni zapis, če nima izpišemo err message, sicer okej -->
@@ -24,12 +24,10 @@
            <span class="invalid-feedback"> <?php echo $data['body_err']; ?></span>
        </div>
  
-        <div class="form-group">
-                <input type="file" name="image" size="20">
-        </div>
-        <div class="form-group">
-                 <input type="submit" class="btn btn-success" value="Dodaj">
-        </div>
+        <input type="file" name="postimage">
+        
+        <input type="submit" name="submit" class="btn btn-success" value="Dodaj">
+        
    </form>
 </div>
 

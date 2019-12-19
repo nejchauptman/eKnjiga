@@ -16,6 +16,4 @@
     <?php elseif($data['post']->user_id != $_SESSION['user_id']) : ?>
         <hr>
     <?php endif; ?>
-
-
 <?php require APPROOT . '/views/inc/footer.php'; ?>

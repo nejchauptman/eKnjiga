@@ -31,7 +31,6 @@ class Core{
       $this->currentController = new $this->currentController;
 
       //preverimo drugi del URL
-
       if(isset($url[1])){
         //preverimo, če metoda obstaja v controlleru
         if(method_exists($this->currentController, $url[1])){

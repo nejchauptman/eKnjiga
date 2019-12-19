@@ -10,7 +10,8 @@
     <?php foreach($data['products'] as $product) : ?>
       <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Knjiga">
+            <img class=" card-img-top" src="<?php echo URLROOT; ?>../images/<?php echo $product->post_image; ?>" width="100%" height="250">
+            
             <div class="card-body">
             <h2 class="card-title"><?php echo $product->title; ?></h2>
               <p class="card-text">Cena: <?php echo $product->price; ?></p>
@@ -24,7 +25,6 @@
             </div>
           </div>
         </div>
-
   <?php endforeach; ?>
   </div>
   

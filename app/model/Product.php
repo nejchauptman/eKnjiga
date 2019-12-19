@@ -20,13 +20,14 @@
         public function addProduct($data){
                     
             //pripravimo query
-            $this ->db->query('INSERT INTO products (user_id,title, price, body) VALUES ( :user_id, :title, :price,:body)');
+            $this ->db->query('INSERT INTO products (user_id,title, price, body, post_image) VALUES ( :user_id, :title, :price,:body, :post_image)');
             
              //bindamo vrednosti
              $this ->db ->bind(':title', $data['title']);
              $this ->db ->bind(':user_id', $data['user_id']);
              $this ->db ->bind(':body', $data['body']);
              $this ->db ->bind(':price', $data['price']);
+             $this ->db ->bind(':post_image', $data['post_image']);
             
              //executamo
              if($this->db->execute()){
