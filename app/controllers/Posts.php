@@ -173,17 +173,20 @@
         public function addProduct(){
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
              
+
                 //sanitize-amo post array
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                 $data =[
                     'title' => trim($_POST['title']),
                     'body' => trim($_POST['body']),
                     'price' => trim($_POST['price']),
+                    //'image' => $_FILES(['image']['name']),
                     'user_id' => $_SESSION['user_id'],
                     'title_err' => '',
                     'body_err' => '',
                     'user_err' => '',
-                    'price_err' => ''
+                    'price_err' => '',
+                    'image_err' => ''
                 ];
 
                 //validiramo naslov

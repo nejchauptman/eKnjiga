@@ -23,13 +23,14 @@
 
         public function shop(){
         //dobimo posts iz našega Post modela
-        $products = $this->productModel->getProducts();
+            $products = $this->productModel->getProducts();
 
             $data=['title' =>'  Trgovina',
             "description" => "Domača prodaja knjig",
             'products' => $products
             
         ];
+      
             
             $this->view('pages/shop', $data);
         }
@@ -37,6 +38,39 @@
             
             
             $this->view('posts/index', $data);
+        }
+
+        public function cart(){
+            
+            $products = $this->productModel->getProducts();
+
+            $data=['title' =>'  Košarica',
+            "description" => "Domača prodaja knjig",
+            'products' => $products ];
+            
+            $this->view('pages/cart',$data);
+        }
+
+        public function charge(){
+            
+            $products = $this->productModel->getProducts();
+
+            $data=['title' =>'',
+            "description" => "",
+            ];
+            
+            $this->view('pages/charge',$data);
+        }
+
+        public function success(){
+            
+            $products = $this->productModel->getProducts();
+
+            $data=['title' =>'',
+            "description" => "",
+            ];
+            
+            $this->view('pages/success',$data);
         }
         
 

@@ -23,7 +23,13 @@
            <textarea name="body" class="form-control form-control-lg <?php echo (!empty($data['body_err'])) ?  'is-invalid' : '';?>"> <?php echo $data['body']; ?></textarea>
            <span class="invalid-feedback"> <?php echo $data['body_err']; ?></span>
        </div>
-       <input type="submit" class="btn btn-success" value="Dodaj">
+ 
+        <div class="form-group">
+                <input type="file" name="image" size="20">
+        </div>
+        <div class="form-group">
+                 <input type="submit" class="btn btn-success" value="Dodaj">
+        </div>
    </form>
 </div>
 
