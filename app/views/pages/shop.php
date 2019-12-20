@@ -10,8 +10,7 @@
     <?php foreach($data['products'] as $product) : ?>
       <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class=" card-img-top" src="<?php echo URLROOT; ?>../images/<?php echo $product->post_image; ?>" width="100%" height="250">
-            
+          <img src="data:<?php echo $product->type;?>;base64,<?php echo base64_encode($product->data);?>" width="100%" height="300">  
             <div class="card-body">
             <h2 class="card-title"><?php echo $product->title; ?></h2>
               <p class="card-text">Cena: <?php echo $product->price; ?></p>
@@ -20,7 +19,6 @@
                 <a href="<?php echo URLROOT; ?>/products/showProduct/<?php echo $product->productId; ?>" class="btn btn-primary mr-2"> Več </a>
                   <button type="button" class="btn btn-sm btn-outline-secondary ml-3  ">Dodaj v košarico</button>
                 </div>
-               
               </div>
             </div>
           </div>

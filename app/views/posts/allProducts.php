@@ -17,7 +17,7 @@
                 <tr>
                     <td><?php echo $product->productId; ?></td>
                         <td><?php echo $product->title; ?></td>
-                        <td><?php echo $product->price; ?></td>
+                        <td><p class="text-truncate" ><?php echo $product->price; ?></p></td>
                         <td><?php echo $product->body; ?></td>
                         <td><a href="<?php echo URLROOT; ?>/products/deleteProduct/<?php echo $product->productId; ?>" class="btn btn-danger"> Izbriši </a</td>
                     </tr>

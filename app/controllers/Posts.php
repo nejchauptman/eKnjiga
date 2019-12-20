@@ -173,7 +173,10 @@
         public function addProduct(){
 
             if(isset($_POST['submit'])){
+
                 $target = "./images/".basename($_FILES['postimage']['name']);
+                $type = $_FILES['postimage']['type'];
+                $data =file_get_contents($_FILES['postimage']['tmp_name']);
 
                 //sanitize-amo post array
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -182,6 +185,8 @@
                     'body' => trim($_POST['body']),
                     'price' => trim($_POST['price']),
                     'post_image' => $_FILES['postimage']['name'],
+                    'type' => $type,
+                    'data' =>$data,
                     'user_id' => $_SESSION['user_id'],
                     'title_err' => '',
                     'body_err' => '',
