@@ -17,7 +17,7 @@
               <div class="d-flex justify-content-md-center align-items-center">
                 <div class="btn-group">
                 <a href="<?php echo URLROOT; ?>/products/showProduct/<?php echo $product->productId; ?>" class="btn btn-primary mr-2"> Več </a>
-                  <button type="button" class="btn btn-sm btn-outline-secondary ml-3  ">Dodaj v košarico</button>
+                    <a href="<?php echo URLROOT; ?>/products/sessionProduct/<?php echo $product->productId; ?>" class="btn btn-primary mr-2"> Dodaj v košarico </a>
                 </div>
               </div>
             </div>

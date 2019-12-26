@@ -8,18 +8,20 @@
 
   <div class="row">
     <div class="col-md-5 order-md-2 mb-4">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Tvoja košarica</span>
       </h4>
-      <ul class="list-group mb-3">
+
+        <ul class="list-group mb-3">
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>
-            <h6 class="my-0">Product name</h6>
-            <small class="text-muted">Brief description</small>
+            <h6 class="my-0"><?php echo $_SESSION['title']; ?></h6>
           </div>
-          <span class="text-muted">$12</span>
-          <span class="text-muted">Dodaj</span>
-          <span class="text-muted">Odstrani</span>
+          <span class="text-muted"><?php echo $_SESSION['price']; ?>€</span>
+            <a class="nav-link" href="<?php echo URLROOT;?>/pages/shop">
+                <span class="text-muted">Dodaj</span></a>
+            <a href="<?php echo URLROOT; ?>/products/sessionOdstraniProdukt/">
+                <span class="text-muted">Odstrani</span></a>
         </li>
         <li class="list-group-item d-flex justify-content-between">
           <span>Poštnina</span>
@@ -27,7 +29,7 @@
         </li>
         <li class="list-group-item d-flex justify-content-between">
           <span>Skupaj </span>
-          <strong>$20</strong>
+          <strong><?php echo $_SESSION['price'] + 3.85; ?>€</strong>
         </li>
       </ul>
     </div>
@@ -47,7 +49,7 @@
         </div>
         <div class="mb-3">
           <label for="email">Email</label>
-          <input type="email" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email" name="email">
+          <input type="email" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email" name="email" >
         </div>
 
         <div class="mb-3">

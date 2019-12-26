@@ -173,6 +173,7 @@
             $_SESSION['user_id']= $user->id;
             $_SESSION['user_email']= $user->email;
             $_SESSION['user_name']= $user->name;
+
             header('Location:'.URLROOT. '/posts');
         }
 

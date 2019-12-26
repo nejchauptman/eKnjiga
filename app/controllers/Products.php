@@ -31,5 +31,32 @@
            }
          }
 
-    
+         public function sessionProduct($id){
+             $products = $this->productModel->getProductById($id);
+             $user = $this->userModel->getUserById($products->user_id);
+
+             $data = [
+                 'products' =>$products,
+                 'user' => $user
+             ];
+
+                 $_SESSION['id'] = $products->id;
+                 $_SESSION['title'] = $products->title;
+                 $_SESSION['price'] = $products->price;
+                 $_SESSION['body'] = $products->body;
+
+                 $this->view('/pages/cart', $data);
+
+         }
+         public function sessionOdstraniProdukt(){
+
+             unset($_SESSION['id']);
+             unset($_SESSION['title']);
+             unset($_SESSION['price']);
+             unset($_SESSION['body']);
+             session_destroy();
+             header('Location:'.URLROOT. '/pages/cart');
+
+
+         }
     }
