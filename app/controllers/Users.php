@@ -19,6 +19,8 @@
                     'lastname' => trim($_POST['lastname']),
                     'email' => trim($_POST['email']),
                     'password' => trim($_POST['password']),
+                    'city' => trim($_POST['city']),
+                    'postnumber' => trim($_POST['postnumber']),
                     'confirm_password' => trim($_POST['confirm_password']),
                     'name_err' => '',
                     'lastname_err' => '',
@@ -46,6 +48,12 @@
                 if(empty($data['lastname'])){
                     $data['lastname_err'] = 'Vnesite Vaše priimek';
                 }
+                if(empty($data['postnumber'])){
+                    $data['postnumber_err'] = 'Vnesite Vašo poštno številko';
+                }
+                if(empty($data['city'])){
+                    $data['city_err'] = 'Vnesite Vaš kraj bivanja';
+                }
                   //validiramo geslo in njeno dolžino
                 if(empty($data['password'])){
                     $data['password_err'] = 'Vnesite Vaše geslo';
@@ -66,7 +74,7 @@
                 }
 
                 //preverimo, da ni nobenega errorja
-                if(empty($data['email_err']) && empty($data['lastname_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
+                if(empty($data['email_err']) && empty($data['lastname_err']) && empty($data['postnumber_err'])&& empty($data['city_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
                     //hashiramo geslo
                     $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
@@ -88,6 +96,8 @@
                    'lastname' => '',
                    'email' => '',
                    'password' => '',
+                   'city' => '',
+                   'postnum' => '',
                    'confirm_password' => '',
                    'name_err' => '',
                    'email_err' => '',
@@ -173,6 +183,10 @@
             $_SESSION['user_id']= $user->id;
             $_SESSION['user_email']= $user->email;
             $_SESSION['user_name']= $user->name;
+            $_SESSION['user_lastname']= $user->lastname;
+            $_SESSION['user_postnum']= $user->postnumber;
+            $_SESSION['user_city']= $user->city;
+
 
             header('Location:'.URLROOT. '/posts');
         }

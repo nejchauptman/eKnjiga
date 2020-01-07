@@ -44,8 +44,10 @@
                  $_SESSION['title'] = $products->title;
                  $_SESSION['price'] = $products->price;
                  $_SESSION['body'] = $products->body;
+                
 
                  $this->view('/pages/cart', $data);
+             
 
          }
          public function sessionOdstraniProdukt(){

@@ -31,14 +31,17 @@
         public function register($data){
 
             //pripravimo query
-            $this ->db->query('INSERT INTO users (name, lastname, email, password) VALUES (:name, :lastname, :email, :password)');
+            $this ->db->query('INSERT INTO users (name, lastname, email, city, postnumber, password) VALUES (:name, :lastname, :email, :city, :postnumber, :password)');
            
             //bindamo vrednosti
             $this ->db ->bind(':name', $data['name']);
             $this ->db ->bind(':lastname', $data['lastname']);
             $this ->db ->bind(':email',$data['email']);
+            $this ->db ->bind(':city', $data['city']);
+            $this ->db ->bind(':postnumber', $data['postnumber']);
             $this ->db ->bind(':password', $data['password']);
 
+        
             //executamo
             if($this->db->execute()){
                 return true;

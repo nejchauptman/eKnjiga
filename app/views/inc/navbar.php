@@ -24,6 +24,9 @@
           <a class="nav-link" href="<?php echo URLROOT;?>/pages/cart"> <i class="fa fa-shopping-cart"></i> </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="<?php echo URLROOT;?>/pages/myTransactions"> Naročila </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT;?>/users/logout">Odjava</a>
         </li>
         <?php elseif(isset($_SESSION['user_id']) && ($_SESSION['user_id']==5)) : ?>
@@ -41,6 +44,7 @@
                 </a>
                 <a href="<?php echo URLROOT;?>/posts/allProducts"  class="nav-link text-dark"> Vsi produkti
                 </a>
+                <a class="nav-link text-dark" href="<?php echo URLROOT;?>/pages/allTransactions">Transakcije</a>
                  <a class="nav-link text-dark" href="<?php echo URLROOT;?>/users/logout">Odjava</a>
               </div>
           </div>

@@ -5,6 +5,7 @@
             $this->postModel=$this->model('Post');
             $this->userModel=$this->model('User');
             $this->productModel=$this->model('Product');
+          
         }
 
         //ker je index kot default potrebujemo to!
@@ -31,9 +32,9 @@
             
         ];
       
-            
             $this->view('pages/shop', $data);
         }
+
         public function blog(){
             
             
@@ -43,12 +44,33 @@
         public function cart(){
             
             $products = $this->productModel->getProducts();
-
+            
             $data=['title' =>'  Košarica',
             "description" => "Domača prodaja knjig",
             'products' => $products ];
             
             $this->view('pages/cart',$data);
+        }
+
+        public function allTransactions(){
+            
+            $products = $this->productModel->getProducts();
+            
+            $data=['title' =>'  Košarica',
+            "description" => "Domača prodaja knjig",
+            'products' => $products ];
+            
+            $this->view('pages/allTransactions',$data);
+        }
+        public function myTransactions(){
+            
+            $products = $this->productModel->getProducts();
+            
+            $data=['title' =>'  Košarica',
+            "description" => "Domača prodaja knjig",
+            'products' => $products ];
+            
+            $this->view('pages/myTransactions',$data);
         }
 
         public function charge(){
@@ -72,6 +94,19 @@
             
             $this->view('pages/success',$data);
         }
-        
+        public function checkout(){
+            
+            $products = $this->productModel->getProducts();
+         
+
+
+            $data=['title' =>'',
+            "description" => "",
+      
+            ];
+
+            
+            $this->view('pages/checkout',$data);
+        }
 
     }
