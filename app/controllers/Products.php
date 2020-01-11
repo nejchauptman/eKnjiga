@@ -56,7 +56,6 @@
                      array_push($kosarica, $noviVnos);
                      $_SESSION["shopping_cart"] = $kosarica;
 
-                     var_dump($kosarica);
 
                      /**
                       * $a = array();
@@ -79,8 +78,9 @@
                      array_push($_SESSION["shopping_cart"], $noviVnos);
 
                  }
-                 $this->view('/pages/cart', $data);
              }
+             $this->view('/pages/cart', $data);
+
          }
          public function sessionOdstraniProdukt(){
 

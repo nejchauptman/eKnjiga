@@ -1,5 +1,5 @@
 // Create a Stripe client
-//my API !!!!!!!!!
+//MOJ API !!!!!!!!!
 var stripe = Stripe('pk_test_ISSuHEaI9gISyeAWRJVBEqBg00yTEsIXlw');
 
 // Create an instance of Elements

@@ -25,6 +25,18 @@
                         <span class="invalid-feedback"> <?php echo $data['email_err']; ?></span>
                     </div>
                     <div class="form-group">
+                        <label for="city"> Mesto: <sup>*</sup></label>
+                        <!-- preverimo, če ni prazen input in ima ustrezni zapis, če nima izpišemo err message, sicer okej -->
+                        <input type="text" name="city" class="form-control form-control-lg <?php echo (!empty($data['city_err'])) ?  'is-invalid' : '';?>" value="<?php echo $data['city'] ;?>">
+                        <span class="invalid-feedback"> <?php echo $data['city_err']; ?></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="number"> Poštna številka: <sup>*</sup></label>
+                        <!-- preverimo, če ni prazen input in ima ustrezni zapis, če nima izpišemo err message, sicer okej -->
+                        <input type="number" name="postnumber" class="form-control form-control-lg <?php echo (!empty($data['postnumber_err'])) ?  'is-invalid' : '';?>" value="<?php echo $data['postnumber'] ;?>">
+                        <span class="invalid-feedback"> <?php echo $data['postnumber_err']; ?></span>
+                    </div>
+                    <div class="form-group">
                         <label for="password"> Geslo: <sup>*</sup></label>
                         <!-- preverimo, če ni prazen input in ima ustrezni zapis, če nima izpišemo err message, sicer okej -->
                         <input type="password" name="password" class="form-control form-control-lg <?php echo (!empty($data['password_err'])) ?  'is-invalid' : '';?>" value="<?php echo $data['password'] ;?>">

@@ -1,7 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';?>
-<?php
 
-?>
     <div class="py-5 text-center">
         <h1>Košarica</h1>
     </div>
@@ -12,20 +10,12 @@
                 <span class="text-muted">Tvoja košarica</span>
             </h4>
 
-            <?php
-            if(!empty($_SESSION["shopping_cart"])){
-                $count=count($_SESSION["shopping_cart"]);
-                echo "$count";
-                $total=0;
-                foreach ($_SESSION["shopping_cart"] as $product){
-
-            ?>
             <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
-                        <h6 class="my-0"><?php echo $product->title; ?></h6>
+                        <h6 class="my-0"><?php echo $_SESSION['title']; ?></h6>
                     </div>
-                    <span class="text-muted"><?php echo $product->price; ?>€</span>
+                    <span class="text-muted"><?php echo $_SESSION['price']; ?>€</span>
                     <a class="nav-link" href="<?php echo URLROOT;?>/pages/shop">
                         <span class="text-muted">Dodaj</span></a>
                     <a href="<?php echo URLROOT; ?>/products/sessionOdstraniProdukt/">
@@ -40,12 +30,6 @@
                     <strong><?php echo $_SESSION['price'] + 3.85; ?>€</strong>
                 </li>
             </ul>
-            <?php
-                }
-            }else{
-                echo "ne dela";
-            }
-            ?>
         </div>
 
         <div class="col-md-7 order-md-1">
