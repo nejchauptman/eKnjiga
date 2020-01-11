@@ -1,5 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
+<?php
 
+?>
 <div class="container">
     <div class="row featurette mt-5">
           <div class="col-md-7">
