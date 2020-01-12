@@ -13,11 +13,32 @@
             <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
-                        <h6 class="my-0"><?php echo $_SESSION['title']; ?></h6>
+                        <?php
+                        if(isset($_SESSION['title'])) {
+                            ?>
+                            <h6 class="my-0"><?php echo $_SESSION['title']; ?></h6>
+                            <?php
+                        }else {
+                            ?>
+                            <h6 class="my-0"><?php echo " " ?></h6>
+                            <?php
+                        }
+                        ?>
                     </div>
-                    <span class="text-muted"><?php echo $_SESSION['price']; ?>€</span>
-                    <a class="nav-link" href="<?php echo URLROOT;?>/pages/shop">
-                        <span class="text-muted">Dodaj</span></a>
+                    <?php
+                    if(isset($_SESSION['price'])) {
+                        ?>
+                        <h6 class="my-0"><?php echo $_SESSION['price']; ?>€</h6>
+                        <?php
+                    }else{
+                    ?>
+                    <span class="text-muted"><?php echo " "; ?></span>
+                        <?php
+                    }
+                    ?>
+                    <a href="<?php echo URLROOT; ?>/pages/shop/">
+                    <span class="text-muted">Dodaj</span></a>
+
                     <a href="<?php echo URLROOT; ?>/products/sessionOdstraniProdukt/">
                         <span class="text-muted">Odstrani</span></a>
                 </li>
@@ -27,7 +48,17 @@
                 </li>
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Skupaj </span>
-                    <strong><?php echo $_SESSION['price'] + 3.85; ?>€</strong>
+                    <?php
+                    if(isset($_SESSION['price'])) {
+                        ?>
+                        <h6 class="my-0"><?php echo $_SESSION['price'] + 3.85; ?>€</h6>
+                        <?php
+                    }else{
+                        ?>
+                        <span class="text-muted"><?php echo " "; ?></span>
+                        <?php
+                    }
+                    ?>
                 </li>
             </ul>
         </div>

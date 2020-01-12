@@ -19,7 +19,7 @@
                             <div class="btn-group">
                                 <a href="<?php echo URLROOT; ?>/products/showProduct/<?php echo $product->productId; ?>" class="btn btn-primary mr-2"> Več </a>
                                 <?php if (isset($_SESSION['user_id'])):?>
-                                <input type="submit" name="add_to_cart"  class="btn btn-primary mr-2" name="dodaj" value="Dodaj v košarico"/>
+                                    <a href="<?php echo URLROOT; ?>/products/sessionProduct/<?php echo $product->productId; ?>" class="btn btn-primary mr-2">Dodaj v košarico </a>
                                 <?php endif; ?>
                             </div>
                         </div>

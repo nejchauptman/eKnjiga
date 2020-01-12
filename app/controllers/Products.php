@@ -41,9 +41,10 @@
                  'products' =>$products,
                  'user' => $user
              ];
+             $_SESSION['title']=$products->title;
+             $_SESSION['price']=$products->price;
 
-
-             if(isset($_POST["add_to_cart"])) {
+            /* if(isset($_POST["add_to_cart"])) {
 
                  if (!isset($_SESSION["shopping_cart"])) {
                      $kosarica = array();
@@ -57,19 +58,6 @@
                      $_SESSION["shopping_cart"] = $kosarica;
 
 
-                     /**
-                      * $a = array();
-                      * $novVnos =  (object)[];
-                      * $novVnos->idIzdelka = 5;
-                      * $novVnos->kolicina =1;
-                      * array_push($a, $novVnos);
-                      * $session[košari] = $a;
-                      *
-                      * else{
-                      * array_push($_Session[..], $novVnos);
-                      */
-
-
                  } else {
                      $noviVnos = (object)[];
                      $noviVnos->$products->id;
@@ -79,6 +67,7 @@
 
                  }
              }
+            */
              $this->view('/pages/cart', $data);
 
          }
@@ -88,9 +77,7 @@
              unset($_SESSION['title']);
              unset($_SESSION['price']);
              unset($_SESSION['body']);
-             session_destroy();
              header('Location:'.URLROOT. '/pages/cart');
-
 
          }
     }
